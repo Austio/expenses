@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  expenditure_id: 1
+  date: 2014-08-24 12:18:58
+  amount: 1
+  comment: MyText
+
+two:
+  expenditure_id: 1
+  date: 2014-08-24 12:18:58
+  amount: 1
+  comment: MyText
