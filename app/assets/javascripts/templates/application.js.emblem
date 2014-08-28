@@ -1,0 +1,11 @@
+header
+  article
+    .logo
+      h1
+        a href='#' Expenses in Ember/Rails!
+        a href='#/expenses' Expenses Link
+
+section#main
+  = outlet
+
+footer

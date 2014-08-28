@@ -5,6 +5,8 @@ class CreateExpenses < ActiveRecord::Migration
       t.integer :amount
       t.text :comment
 
+      t.integer :user_id
+
       t.timestamps
     end
   end

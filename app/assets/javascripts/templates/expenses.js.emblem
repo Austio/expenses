@@ -1,0 +1,4 @@
+expenses
+ul
+  each expense in controller
+    li= expense.Comment

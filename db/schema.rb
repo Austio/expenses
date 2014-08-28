@@ -13,17 +13,11 @@
 
 ActiveRecord::Schema.define(version: 20140824191858) do
 
-  create_table "expenditures", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "expense_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "expenses", force: true do |t|
     t.datetime "date"
     t.integer  "amount"
     t.text     "comment"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

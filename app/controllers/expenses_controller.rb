@@ -4,7 +4,7 @@ class ExpensesController < ApplicationController
   # GET /expenses
   # GET /expenses.json
   def index
-    @expenses = Expense.all
+    render json: Expense.all
   end
 
   # GET /expenses/1
@@ -69,6 +69,6 @@ class ExpensesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def expense_params
-      params.require(:expense).permit(:expenditure_id, :date, :amount, :comment)
+      params.require(:expense).permit(:date, :amount, :comment)
     end
 end
