@@ -1,4 +1,6 @@
 expenses
 ul
   each expense in controller
-    li= expense.Comment
+    li= expense.comment
+    li= expense.amount
+    a href='#/expense/{expense.id}' link
