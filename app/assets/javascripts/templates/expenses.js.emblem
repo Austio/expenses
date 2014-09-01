@@ -1,6 +1,0 @@
-expenses
-ul
-  each expense in controller
-    li= expense.comment
-    li= expense.amount
-    a href='#/expense/{expense.id}' link

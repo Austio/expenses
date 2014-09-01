@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
+  root to: 'home#index'
+
   namespace :api do
     resources :expenses
   end
 
-  root to: 'home#index'
-  get '*path', to: 'home#index'
 
   resources :expenses
 

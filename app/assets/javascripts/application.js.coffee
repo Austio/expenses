@@ -1,3 +1,4 @@
+
 #= require jquery
 #= require handlebars
 #= require ember
@@ -6,5 +7,8 @@
 #= require app
 
 # for more details see: http://emberjs.com/guides/application/
-window.App = Ember.Application.create(rootElement: "#ember-app")
+window.App = Ember.Application.create()
 
+
+# for more details see: http://emberjs.com/guides/application/
+window.App = Ember.Application.create(rootElement: "#ember-app")
