@@ -1,0 +1,5 @@
+article#expenses
+  h1 Expenses
+  ul
+    each expense in controller
+      li= expense.amount

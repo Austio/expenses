@@ -1,1 +1,10 @@
-h1 Hello World
+header
+  article
+    .logo
+      h1
+        a href="#" Ember Expenses
+
+section#main
+  = outlet
+
+footer
