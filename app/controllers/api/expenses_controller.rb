@@ -14,6 +14,7 @@ class Api::ExpensesController < ApplicationController
   end
 
   def update
+    sleep 2
     respond_with expense.update(expense_params)
   end
 
