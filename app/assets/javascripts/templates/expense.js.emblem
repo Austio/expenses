@@ -1,7 +1,7 @@
 outlet
 
 unless isEditing
-  article#leads
+  article#elements
     h1
       model.comment
       link-to 'edit' 'expense.edit' model classNames='edit'

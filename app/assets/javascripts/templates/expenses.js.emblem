@@ -1,4 +1,4 @@
-article#leads
+article#elements
   h1 Expenses
   ul
     each expense in controller

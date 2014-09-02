@@ -1,4 +1,4 @@
-article#lead
+article#element
   h1
     model.comment
 
