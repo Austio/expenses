@@ -2,4 +2,5 @@
 
 App.Router.map ->
   @resource 'expenses', path: '/', ->
-    @resource 'expense', path: '/expenses/:id'
+    @resource 'expense', path: '/expenses/:id', ->
+      @route 'edit'

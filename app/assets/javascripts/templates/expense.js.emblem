@@ -1,24 +1,29 @@
-article#leads
-  h1=model.comment
+outlet
 
-  p
-    label Comment:
-    br
-    view Ember.TextField value=model.comment
+unless isEditing
+  article#leads
+    h1
+      model.comment
+      link-to 'edit' 'expense.edit' model classNames='edit'
 
-  p
-    label Amount:
-    br
-    view Ember.TextField value=model.amount
+    p
+      label Comment:
+      br
+      view Ember.TextField value=model.comment
 
-  p
-    label Date:
-    br
-    view Ember.TextField value=model.date
+    p
+      label Amount:
+      br
+      view Ember.TextField value=model.amount
 
-  p
-    input type='submit' value='Save Changes' click='saveChanges'
-    if showUnsavedMessage
-      .unsaved unsaved changes
-    if isSaving
-      .saving saving...
+    p
+      label Date:
+      br
+      view Ember.TextField value=model.date
+
+    p
+      input type='submit' value='Save Changes' click='saveChanges'
+      if showUnsavedMessage
+        .unsaved unsaved changes
+      if isSaving
+        .saving saving...
