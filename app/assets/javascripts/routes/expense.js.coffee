@@ -1,3 +1,3 @@
-App.ExpenseRoute = Ember.Route.extend
+App.ExpenseRoute = App.AuthenticatedRoute.extend
 
   model: (params) -> @store.find 'expense', params.id

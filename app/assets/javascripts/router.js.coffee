@@ -5,3 +5,5 @@ App.Router.map ->
     @route 'new'
     @resource 'expense', path: '/expenses/:id', ->
       @route 'edit'
+  @route 'signup'
+  @route 'login'
