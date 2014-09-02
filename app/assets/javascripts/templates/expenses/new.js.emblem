@@ -1,0 +1,18 @@
+article#element
+  h1 New Expense
+
+  form
+    fieldset
+      dl
+        dt: label Comment:
+        dd: view Ember.TextField value=fields.comment
+      dl
+        dt: label date:
+        dd: view Ember.TextField value=fields.date
+      dl
+        dt: label amount:
+        dd: view Ember.TextField value=fields.amount
+
+  fieldset.actions
+    input type='submit' value='Create Expense' click="createExpense"
+

@@ -1,5 +1,7 @@
 article#elements
-  h1 Expenses
+  h1
+  | Expenses
+  link-to 'expenses.new' | New Expenses
   ul
     each expense in controller
       link-to 'expense' expense tagName='li'
