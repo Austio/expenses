@@ -1,6 +1,9 @@
 article#element
   h1 New Expense
 
+  if showError
+    .error Expense must have amount, date and comment
+
   form
     fieldset
       dl
