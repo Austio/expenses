@@ -2,13 +2,19 @@ article#leads
   h1=model.comment
 
   p
-    ' Comment:
-    model.comment
+    label Comment:
+    br
+    view Ember.TextField value=model.comment
 
   p
-    ' Amount:
-    model.amount
+    label Amount:
+    br
+    view Ember.TextField value=model.amount
 
   p
-    ' Date:
-    model.date
+    label Date:
+    br
+    view Ember.TextField value=model.date
+
+  p
+    input type='submit' value='Save Changes' click='saveChanges'

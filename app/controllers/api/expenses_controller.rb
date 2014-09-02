@@ -10,11 +10,11 @@ class Api::ExpensesController < ApplicationController
   end
 
   def create
-    respond_with :api, Expense.create(Expense_params)
+    respond_with :api, Expense.create(expense_params)
   end
 
   def update
-    respond_with expense.update(Expense_params)
+    respond_with expense.update(expense_params)
   end
 
   def destroy
@@ -28,7 +28,7 @@ class Api::ExpensesController < ApplicationController
   end
 
   def expense_params
-    params.require(:expense).permit(:first_name, :last_name, :email, :phone, :status, :notes)
+    params.require(:expense).permit(:comment, :amount, :date)
   end
 
 end
