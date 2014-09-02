@@ -22,6 +22,7 @@ unless isEditing
       view Ember.TextField value=model.date
 
     p
+      a.delete href='#' click="delete" delete
       input type='submit' value='Save Changes' click='saveChanges'
       if showUnsavedMessage
         .unsaved unsaved changes

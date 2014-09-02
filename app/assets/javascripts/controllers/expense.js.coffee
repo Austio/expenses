@@ -8,3 +8,7 @@ App.ExpenseController = Ember.ObjectController.extend
   showUnsavedMessage: ( ->
     @get('isDirty') and !@get('isSaving')
   ).property('isDirty','isSaving')
+
+  delete: ->
+    @get('model').destroyRecord().then =>
+      @transitionToRoute 'expenses'
