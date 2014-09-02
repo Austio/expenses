@@ -1,0 +1,14 @@
+article#leads
+  h1=model.comment
+
+  p
+    ' Comment:
+    model.comment
+
+  p
+    ' Amount:
+    model.amount
+
+  p
+    ' Date:
+    model.date

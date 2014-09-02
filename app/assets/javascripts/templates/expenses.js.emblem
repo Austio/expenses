@@ -1,5 +1,8 @@
-article#expenses
+article#leads
   h1 Expenses
   ul
     each expense in controller
-      li= expense.amount
+      link-to 'expense' expense tagName='li'
+        expense.amount
+
+outlet
