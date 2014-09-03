@@ -14,7 +14,7 @@ class Api::ExpensesController < ApplicationController
   end
 
   def update
-    sleep 2
+    puts request.headers.env["HTTP_API_KEY"]
     respond_with expense.update(expense_params)
   end
 
