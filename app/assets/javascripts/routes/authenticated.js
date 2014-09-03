@@ -23,7 +23,12 @@ App.AuthenticatedRoute = Ember.Route.extend({
     error: function(reason, transition) {
       if (reason.status === 401) {
         this.redirectToLogin(transition);
-      } else {
+      }
+      else if(reason.status == 403) {
+        //alert(JSON.stringify(reason))
+        alert(reason.responseText)
+      }
+      else {
         alert('Something went wrong');
       }
     }

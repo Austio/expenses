@@ -1,12 +1,17 @@
 class Api::ExpensesController < ApplicationController
   respond_to :json
 
+
   def index
-    respond_with Expense.all
+    respond_with current_user.expenses.all
   end
 
   def show
-    respond_with expense
+    if current_user.id != expense.id
+      render json: { message: "Unauthorized"}, status: 403
+    else
+      respond_with expense
+    end
   end
 
   def create
@@ -33,5 +38,6 @@ class Api::ExpensesController < ApplicationController
   def expense_params
     params.require(:expense).permit(:comment, :amount, :date)
   end
+
 
 end
