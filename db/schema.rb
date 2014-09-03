@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20140903023629) do
     t.datetime "date"
     t.integer  "amount"
     t.text     "comment"
+    t.text     "description"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
