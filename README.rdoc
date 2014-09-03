@@ -1,5 +1,8 @@
 == README
 
+http://ember.vicramon.com/chapters
+http://coderberry.me/blog/2013/07/08/authentication-with-emberjs-part-1/
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
