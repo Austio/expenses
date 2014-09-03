@@ -44,7 +44,7 @@ class Api::ExpensesController < ApplicationController
   end
 
   def authorized?
-    current_user.id == expense.id
+    current_user.id == expense.user_id
   end
 
 end
