@@ -10,7 +10,8 @@ class Api::ExpensesController < ApplicationController
   end
 
   def create
-    respond_with :api, Expense.create(expense_params)
+    puts current_user
+    respond_with :api, current_user.expenses.create(expense_params)
   end
 
   def update
