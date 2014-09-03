@@ -4,7 +4,7 @@ class Api::SessionsController < ActionController::Base
     user = User.find_by_email(params[:email])
     if user
       if user.authenticate(params["password"])
-        render json: {success: true, message: "YEAH PWD MATCHES"}
+        render json: {success: true, message: user.set_token}
       else
         render json: {success: false, message: "Please Check Password"}
       end
