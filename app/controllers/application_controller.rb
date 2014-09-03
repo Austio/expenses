@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_user(key)
-    @current_user = Token.where(key: key).try(:user)
+    Token.all.each {|t| return t.user if t.key == key }
   end
 end

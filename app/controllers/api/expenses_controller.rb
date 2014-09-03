@@ -15,7 +15,7 @@ class Api::ExpensesController < ApplicationController
 
   def update
     puts request.headers.env["HTTP_API_KEY"] || "No token present"
-
+    puts current_user(request.headers.env["HTTP_API_KEY"]) || "No User Found"
     respond_with expense.update(expense_params)
   end
 
