@@ -3,23 +3,33 @@ outlet
 unless isEditing
   article#elements
     h1
-      model.comment
+      model.description
       link-to 'edit' 'expense.edit' model classNames='edit'
+
+    p
+      label Description:
+      br
+      view Ember.TextField value=model.description
+
+    p
+      label Amount:
+      br
+      view Ember.TextField value=model.amount
+    p
+      label Date:
+      br
+      view Ember.TextField value=model.date
+
+    p
+      label Time:
+      br
+      view Ember.TextField value=model.time
 
     p
       label Comment:
       br
       view Ember.TextField value=model.comment
 
-    p
-      label Amount:
-      br
-      view Ember.TextField value=model.amount
-
-    p
-      label Date:
-      br
-      view Ember.TextField value=model.date
 
     p
       a.delete href='#' click="delete" delete

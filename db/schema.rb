@@ -14,7 +14,8 @@
 ActiveRecord::Schema.define(version: 20140903023629) do
 
   create_table "expenses", force: true do |t|
-    t.datetime "date"
+    t.date     "date"
+    t.time     "time"
     t.integer  "amount"
     t.text     "comment"
     t.text     "description"

@@ -40,7 +40,7 @@ class Api::ExpensesController < ApplicationController
   end
 
   def expense_params
-    params.require(:expense).permit(:comment, :amount, :date)
+    params.require(:expense).permit(:comment, :amount, :date, :description, :time)
   end
 
   def authorized?

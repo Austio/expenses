@@ -4,17 +4,27 @@ article#element
 
   form
     fieldset
+
       dl
-        dt: label Comment:
-        dd: view Ember.TextField value=model.comment
+        dt: label Description:
+        dd: view Ember.TextField value=model.description
+
+      dl
+        dt: label Amount:
+        dd: view Ember.TextField value=model.amount
 
       dl
         dt: label Date:
         dd: view Ember.TextField value=model.date
 
       dl
-        dt: label Amount:
-        dd: view Ember.TextField value=model.amount
+        dt: label Time:
+        dd: view Ember.TextField value=model.time
+
+      dl
+        dt: label Comment:
+        dd: view Ember.TextField value=model.comment
+
 
     fieldset.actions
       input type='submit' value='Save Changes' click="saveChanges"

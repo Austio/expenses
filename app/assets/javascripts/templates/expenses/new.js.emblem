@@ -2,19 +2,25 @@ article#element
   h1 New Expense
 
   if showError
-    .error Expense must have amount, date and comment
+    .error Expense must have amount and description
 
   form
     fieldset
       dl
-        dt: label Comment:
-        dd: view Ember.TextField value=fields.comment
+        dt: label *Description:
+        dd: view Ember.TextField value=fields.description
       dl
-        dt: label date:
+        dt: label *Amount:
+        dd: view Ember.TextField value=fields.amount
+      dl
+        dt: label Date:
         dd: view Ember.TextField value=fields.date
       dl
-        dt: label amount:
-        dd: view Ember.TextField value=fields.amount
+        dt: label Time:
+        dd: view Ember.TextField value=fields.time
+      dl
+        dt: label Comment:
+        dd: view Ember.TextField value=fields.comment
 
   fieldset.actions
     input type='submit' value='Create Expense' click="createExpense"

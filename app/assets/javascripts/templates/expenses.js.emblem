@@ -5,6 +5,6 @@ article#elements
   ul
     each expense in controller
       link-to 'expense' expense tagName='li'
-        expense.amount
+        expense.description
 
 outlet
