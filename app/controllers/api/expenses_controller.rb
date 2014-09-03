@@ -14,7 +14,7 @@ class Api::ExpensesController < ApplicationController
   end
 
   def update
-    puts request.headers.env["HTTP_API_KEY"]
+    puts request.headers.env["HTTP_API_KEY"] || "No token present"
     respond_with expense.update(expense_params)
   end
 
