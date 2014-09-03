@@ -3,11 +3,13 @@ class Api::SessionsController < ActionController::Base
   def create
     user = User.find_by_email(params[:email])
     if user
-      if params[:password] == user.password_digest
-        return 400
+      if user.authenticate(params["password"])
+        render json: {success: true, message: "YEAH PWD MATCHES"}
+      else
+        render json: {success: false, message: "Please Check Password"}
       end
     else
-      render json: {success: false, message: 'Invalid User or Password'}
+      render json: {success: false, message: "Username Not Found"}
     end
   end
 end

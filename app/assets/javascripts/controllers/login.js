@@ -2,7 +2,7 @@ App.LoginController = Ember.Controller.extend({
 
     reset: function() {
         this.setProperties({
-            username: "",
+            email: "",
             password: "",
             errorMessage: ""
         });
@@ -15,7 +15,7 @@ App.LoginController = Ember.Controller.extend({
 
     login: function() {
 
-        var self = this, data = this.getProperties('username', 'password');
+        var self = this, data = this.getProperties('email', 'password');
 
         // Clear out any error messages.
         this.set('errorMessage', null);
