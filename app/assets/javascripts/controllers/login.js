@@ -20,21 +20,12 @@ App.LoginController = Ember.Controller.extend({
         // Clear out any error messages.
         this.set('errorMessage', null);
 
-        $.post('/auth.json', data).then(function(response) {
-
+        $.post('/api/sessions', data).then(function(response) {
             self.set('errorMessage', response.message);
             if (response.success) {
                 alert('Login succeeded!');
                 self.set('token', response.token);
-
-                var attemptedTransition = self.get('attemptedTransition');
-                if (attemptedTransition) {
-                    attemptedTransition.retry();
-                    self.set('attemptedTransition', null);
-                } else {
-                    // Redirect to 'articles' by default.
-                    self.transitionToRoute('articles');
-                }
+                self.transitionToRoute('expenses');
             }
         });
     }
