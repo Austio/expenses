@@ -1,32 +1,36 @@
 class Api::ExpensesController < ApplicationController
   respond_to :json
 
-
   def index
     respond_with current_user.expenses.all
   end
 
   def show
-    if current_user.id != expense.id
-      render json: { message: "Unauthorized"}, status: 403
-    else
+    if authorized?
       respond_with expense
+    else
+      render json: { message: "Unauthorized"}, status: 403
     end
   end
 
   def create
-    puts current_user
     respond_with :api, current_user.expenses.create(expense_params)
   end
 
   def update
-    puts request.headers.env["HTTP_API_KEY"] || "No token present"
-    puts current_user(request.headers.env["HTTP_API_KEY"]) || "No User Found"
-    respond_with expense.update(expense_params)
+    if authorized?
+      respond_with expense.update(expense_params)
+    else
+      render json: { message: "Unauthorized"}, status: 403
+    end
   end
 
   def destroy
-    respond_with expense.destroy
+    if authorized?
+      respond_with expense.destroy
+    else
+      render json: { message: "Unauthorized"}, status: 403
+    end
   end
 
   private
@@ -39,5 +43,8 @@ class Api::ExpensesController < ApplicationController
     params.require(:expense).permit(:comment, :amount, :date)
   end
 
+  def authorized?
+    current_user.id == expense.id
+  end
 
 end
