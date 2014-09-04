@@ -4,13 +4,15 @@ App.ApplicationRoute = Ember.Route.extend({
     actions: {
         logoutUser: function(transition, originRoute) {
             $.ajax({
-                url:  'api/logout',
+                url:  '/api/sessions/logout',
                 type: 'POST',
-                data:  {"key":localStorage['token']}
+                data:  {"key":localStorage.token}
             })
-            localStorage.clear();
+            delete localStorage.token;
+            this.transitionTo('login');
             alert("Logged Out Successfully!")
-            this.transitionTo('login')
+            location.reload();
         }
     }
+    //TODO deal with someone having a token that doesn't go anywhere
 });

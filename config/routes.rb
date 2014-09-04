@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :expenses
     resources :sessions
     resources :accounts
-    post 'logout', to: 'sessions'
+    post '/sessions/logout', to: 'sessions#logout'
   end
 
 

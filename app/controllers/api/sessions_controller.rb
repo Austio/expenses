@@ -14,7 +14,7 @@ class Api::SessionsController < ActionController::Base
   end
 
   def logout
-    token = Token.all.first{|t| t.key == params[:key]}
+    token = Token.all.find{|t| t.key == params[:key]}
     if token.destroy
       render json: {success: true}
     end

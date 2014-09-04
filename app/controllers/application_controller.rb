@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
 
   #TODO this should not be necessary, can't find token by key in ruby 1.9.3
   def current_token(key)
-    Token.all.first{|t| t.key == key}
+    Token.all.find{|t| t.key == key}
   end
 end
