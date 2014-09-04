@@ -2,9 +2,9 @@ header
   article
     .logo
       h1
-        a href="#"  Expenses  |  |
-        a href="login"   Login  |  |
-        a href="signup" Sign Up  |  |
+        a href="#/expenses"  Expenses  |  |
+        a href="#/login"   Login  |  |
+        a href="#/" Sign Up  |  |
         a click="logoutUser" Logout
 
 section#main

@@ -9,20 +9,26 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
+2.1.2
 
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+* API
+  All api actions are performed through the nested route /api.  There are 3 controllers.
+  Accounts
+    /api/create
+      - Accepts :email and :username
+        if email is found returns
+          success: false
+          message: "Duplicate Username!"
+        otherwise creates an account using username and password and returns
+          success: true
+          message: "Account Create, Logging In!"
+          token: --A randomly generated api token for login--
 
-* Deployment instructions
+  Sessions
+
+  Expenses
 
 * ...
 
