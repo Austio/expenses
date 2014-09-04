@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   namespace :api do
     resources :expenses
     resources :sessions
+    resources :accounts
+    post 'logout', to: 'sessions'
   end
 
 

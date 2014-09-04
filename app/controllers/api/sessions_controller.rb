@@ -12,4 +12,12 @@ class Api::SessionsController < ActionController::Base
       render json: {success: false, message: "Username Not Found"}
     end
   end
+
+  def logout
+    token = Token.all.first{|t| t.key == params[:key]}
+    if token.destroy
+      render json: {success: true}
+    end
+
+  end
 end

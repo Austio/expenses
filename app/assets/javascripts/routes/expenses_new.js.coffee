@@ -1,4 +1,4 @@
-App.ExpensesNewRoute = Ember.Route.extend
+App.ExpensesNewRoute = App.AuthenticatedRoute.extend
 
   setupController: (controller) ->
     controller.set 'fields', {}

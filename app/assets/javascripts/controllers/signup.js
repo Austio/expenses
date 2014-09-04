@@ -20,10 +20,10 @@ App.SignupController = Ember.Controller.extend({
         // Clear out any error messages.
         this.set('errorMessage', null);
 
-        $.post('/api/sessions', data).then(function(response) {
+        $.post('/api/accounts', data).then(function(response) {
             self.set('errorMessage', response.message);
             if (response.success) {
-                alert('Login succeeded!');
+                alert('Account Created, Logging In!');
                 self.set('token', response.token);
                 self.transitionToRoute('expenses');
             }

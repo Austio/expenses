@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_user(key=request.headers.env["HTTP_API_KEY"])
-    Token.all.first {|t| t.key == key }.try(:user)
+    current_token(key).try(:user)
+  end
+
+  #TODO this should not be necessary, can't find token by key in ruby 1.9.3
+  def current_token(key)
+    Token.all.first{|t| t.key == key}
   end
 end
