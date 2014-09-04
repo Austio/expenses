@@ -3,12 +3,10 @@ header
     .logo
       h1
         | Adequate Expenses
-        if localStorage.token
-          a href="#/expenses"  ||  Expenses  |
-          a click="logoutUser" |  Logout
-        else
-          a href="#/login"  ||  Login  |
-          a href="#/" |  Sign Up
+        a href="#/expenses"  ||  Expenses  |
+        a click="logoutUser" |  Logout  |
+        a href="#/login"  |  Login  |
+        a href="#/" |  Sign Up
 
 
 

@@ -9,9 +9,15 @@ App.ApplicationRoute = Ember.Route.extend({
                 data:  {"key":localStorage.token}
             })
             delete localStorage.token;
+            App.ApplicationAdapter = DS.ActiveModelAdapter.reopen({
+                headers: {
+                    "API_KEY": ''
+                }
+            })
+
             this.transitionTo('login');
             alert("Logged Out Successfully!")
-            location.reload();
+            //location.reload();
         }
     }
     //TODO deal with someone having a token that doesn't go anywhere

@@ -25,6 +25,13 @@ App.SignupController = Ember.Controller.extend({
             if (response.success) {
                 alert('Account Created, Logging In!');
                 self.set('token', response.token);
+
+                App.ApplicationAdapter = DS.ActiveModelAdapter.reopen({
+                    headers: {
+                        "API_KEY": localStorage.token
+                    }
+                })
+
                 self.transitionToRoute('expenses');
             }
         });

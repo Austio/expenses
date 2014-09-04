@@ -25,7 +25,15 @@ App.LoginController = Ember.Controller.extend({
             if (response.success) {
                 alert('Login succeeded!');
                 self.set('token', response.token);
+
+                App.ApplicationAdapter = DS.ActiveModelAdapter.reopen({
+                    headers: {
+                        "API_KEY": localStorage.token
+                    }
+                })
+
                 self.transitionToRoute('expenses');
+
             }
         });
     }
