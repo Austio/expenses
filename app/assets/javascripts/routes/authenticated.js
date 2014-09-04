@@ -1,7 +1,7 @@
 App.AuthenticatedRoute = Ember.Route.extend({
 
   beforeModel: function(transition) {
-   if (!this.controllerFor('login').get('token')) {
+   if (!localStorage.token) {
       this.redirectToLogin(transition);
     }
   },
