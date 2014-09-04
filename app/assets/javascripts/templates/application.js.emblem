@@ -4,6 +4,7 @@ header
       h1
         a href="#" Ember Expenses
         a href="login" Login
+        a click="logoutUser" Logout
 
 section#main
   = outlet

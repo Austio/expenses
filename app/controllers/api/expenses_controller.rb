@@ -2,6 +2,7 @@ class Api::ExpensesController < ApplicationController
   respond_to :json
 
   def index
+    puts current_user.inspect
     respond_with current_user.expenses.all
   end
 

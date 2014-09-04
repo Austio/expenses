@@ -12,3 +12,5 @@ App.ExpenseController = Ember.ObjectController.extend
   delete: ->
     @get('model').destroyRecord().then =>
       @transitionToRoute 'expenses'
+
+

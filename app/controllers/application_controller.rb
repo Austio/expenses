@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_user(key=request.headers.env["HTTP_API_KEY"])
-    Token.all.each {|t| return t.user if t.key == key }
+    Token.all.first {|t| t.key == key }.try(:user)
   end
 end
