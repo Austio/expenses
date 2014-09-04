@@ -2,10 +2,15 @@ header
   article
     .logo
       h1
-        a href="#/expenses"  Expenses  |  |
-        a href="#/login"   Login  |  |
-        a href="#/" Sign Up  |  |
-        a click="logoutUser" Logout
+        | Adequate Expenses
+        if localStorage.token
+          a href="#/expenses"  ||  Expenses  |
+          a click="logoutUser" |  Logout
+        else
+          a href="#/login"  ||  Login  |
+          a href="#/" |  Sign Up
+
+
 
 section#main
   = outlet

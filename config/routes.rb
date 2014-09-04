@@ -9,11 +9,6 @@ Rails.application.routes.draw do
     post '/sessions/logout', to: 'sessions#logout'
   end
 
-
-  resources :expenses
-
-  resources :users
-
   get '*path', to: 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
