@@ -1,9 +1,7 @@
 class Api::ExpensesController < ApplicationController
   respond_to :json
-   protect_from_forgery :only => :nothing
+
   def index
-    puts params
-    puts env
     respond_with current_user.expenses.all
   end
 
