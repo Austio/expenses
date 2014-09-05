@@ -2,7 +2,14 @@ App.ReportController = Ember.Controller.extend({
 
     setup: function() {
         var self = this;
-        $.get('/api/reports').then(function(response){
+        $.ajax({
+            type: 'GET',
+            url: '/api/reports',
+            headers: {
+                "API_KEY": localStorage.token
+            }
+
+        }).then(function(response){
 
 
             console.log(response)
