@@ -1,6 +1,5 @@
 //head route for global functions
 App.ApplicationRoute = Ember.Route.extend({
-    //TODO delete the token from server
     actions: {
         logoutUser: function(transition, originRoute) {
             $.ajax({
@@ -17,7 +16,7 @@ App.ApplicationRoute = Ember.Route.extend({
 
             alert("Logged Out Successfully!")
             location.reload(); //clear all the data from browser
-            this.transitionTo('login');
+            this.transitionToRoute('signup');
         }
     }
     //TODO deal with someone having a token that doesn't go anywhere

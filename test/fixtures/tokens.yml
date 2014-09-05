@@ -1,11 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 1
+  user: pillsbury
   expiration: 2014-09-02 19:36:29
-  key: MyText
+  key: RandomText
 
-two:
-  user_id: 1
-  expiration: 2014-09-02 19:36:29
-  key: MyText
+

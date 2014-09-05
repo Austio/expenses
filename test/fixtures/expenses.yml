@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  expenditure_id: 1
+  user: pillsbury
   date: 2014-08-24 12:18:58
-  amount: 1
-  comment: MyText
+  amount: 100000
+  description: Night on the town
 
 two:
-  expenditure_id: 1
+  user: thundercat
   date: 2014-08-24 12:18:58
-  amount: 1
-  comment: MyText
+  amount: 10000
+  description: Stuff!!!
