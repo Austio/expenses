@@ -35,4 +35,4 @@ gem 'ember-source'
 gem 'emblem-rails'
 
 # used for mocks in minitest
-gem 'mocha'
+gem 'mocha', group: :development
