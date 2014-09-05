@@ -1,15 +1,23 @@
 == README
 
-http://ember.vicramon.com/chapters
-http://coderberry.me/blog/2013/07/08/authentication-with-emberjs-part-1/
+Adaquate Expenses is a multi-tenant (extemely) lightweight expense tracking app written in EmberJS and uses a Ruby on Rails API in order to login, create accounts and edit expenses.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Expenses from one user are not visable, editable or destroyable by another user.
 
-Things you may want to cover:
+Users can be logged in from multiple independent session.
+
 
 * Ruby version
 2.1.2
+
+* Setup for development
+cd into the Adequate Expenses directory and run
+  bundle install
+  rake db:setup
+  rails s
+
+  You should be able to bring up a web browser and navigate to localhost:3000
+
 
 * How to run the test suite
 
@@ -49,8 +57,5 @@ Things you may want to cover:
 
   Expenses
 
-* ...
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

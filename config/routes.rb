@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   namespace :api do
+    resources :reports
     resources :expenses
     resources :sessions
     resources :accounts
