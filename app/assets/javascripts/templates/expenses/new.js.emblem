@@ -13,7 +13,7 @@ article#element
         dt: label *Amount:
         dd: view Ember.TextField value=fields.amount
       dl
-        dt: label Date:
+        dt: label Date (YYYY-MM-dd)
         dd: view Ember.TextField value=fields.date
       dl
         dt: label Time:

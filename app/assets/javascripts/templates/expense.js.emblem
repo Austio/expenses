@@ -16,7 +16,7 @@ unless isEditing
       br
       view Ember.TextField value=model.amount
     p
-      label Date:
+      label Date: (*format YYYY-MM-dd)
       br
       view Ember.TextField value=model.date
 

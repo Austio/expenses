@@ -1,9 +1,10 @@
 article#elements
   h1
-  | Expenses
-  link-to 'expenses.new' | New Expenses
+    | Expenses
+    link-to 'expenses.new' | New Expense
+  view Ember.TextField value=search placeholder="Filter Description" classNames="search"
   ul
-    each expense in controller
+    each expense in expenses
       link-to 'expense' expense tagName='li'
         expense.description
 
