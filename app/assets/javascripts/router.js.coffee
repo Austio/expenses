@@ -7,3 +7,4 @@ App.Router.map ->
       @route 'edit'
   @route 'signup', path: '/'
   @route 'login'
+  @route 'reports'

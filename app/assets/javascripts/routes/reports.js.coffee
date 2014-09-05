@@ -1,0 +1,1 @@
+App.ReportsRoute = Ember.Route.extend
