@@ -6,10 +6,10 @@
 #
 pillsbury:
   email: a@doughboy.com
-  password: linebacker
+  password_digest: <%= BCrypt::Password.create('linebacker') %>
 # column: value
 #
 thundercat:
   email: onthe@move.com
-  password: linebacker
+  password_digest: <%= BCrypt::Password.create('linebacker') %>
 #  column: value

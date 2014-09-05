@@ -15,8 +15,8 @@ Things you may want to cover:
 
 * API
   All api actions are performed through the nested route /api.  There are 3 controllers.
-  Accounts
-    /api/create
+  Signup is handled by the Api::AccountsController
+    /api/accounts
       - Accepts :email and :username
         if email is found returns
           success: false
