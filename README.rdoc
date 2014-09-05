@@ -55,7 +55,23 @@ cd into the Adequate Expenses directory and run
           token: --A randomly generated super long secure api token--
 
 
-  Expenses
+  Expense are handled by the Api::ExpensesController
+    All actions follow normal RESTapi. This is a multitentant app so if the user does not own the expense or is not logged in.  Any actions will return
+      message: "Unauthorized"
+      status: 403
 
+    /api/expenses
 
+  Reports generates the weekly breakdown and is handled by Api::ReportsController
+    It uses the service object ReportGenerator in order to find expenses for a user and return the JSON to that request.
+    /api/reports
+      if user is not logged in and requests the url
+        status: 403
+        message: "Unauthorized"
+      if user is logged in returns a json response in the following format.
+        "YYYY-WW":
+          "amount": the total spent during the week
+          "average": the average amount of each expense in the time frame
+          "total_expenses": the number of expenses in the week of that year
 
+        Mulitple weeks can be in this object, all objects that do not have a date are summarized in the "0000-00" week
