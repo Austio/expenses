@@ -6,7 +6,7 @@ class Api::ReportsController < ApplicationController
     if user
       render json: ReportGenerator.by_week(user)
     else
-      render json: { message: "Unauthorized"}
+      render json: { message: "Unauthorized"}, status: 403
     end
   end
 

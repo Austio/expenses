@@ -29,7 +29,7 @@
 <script type="text/x-handlebars" data-template-name="report" id="report">
 
 
-      {{#each expensesByWeek}}
+
 
       <table class="gridtable">
         <thead>
@@ -41,18 +41,18 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-
-            <td>{{this.key}}</td>
-            <td>{{this.amount}}</td>
-            <td>{{this.average}}</td>
-            <td>{{this.total_expenses}}</td>
-          </tr>
+          {{#each expensesByWeek}}
+            <tr>
+              <td>{{this.key}}</td>
+              <td>{{this.amount}}</td>
+              <td>{{this.average}}</td>
+              <td>{{this.total_expenses}}</td>
+            </tr>
+          {{/each}}
         </tbody>
       </table>
+      *Expenses without a date are '0000-00'
 
-
-      {{/each}}
       {{#if errorMessage}}
         <div class="alert alert-error">{{errorMessage}}</div>
       {{/if}}
