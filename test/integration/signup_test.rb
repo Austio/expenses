@@ -15,4 +15,11 @@ class SignupTest < ActionDispatch::IntegrationTest
     assert_equal resp[:success], false
   end
 
+  test "Works for unique valid accounts"  do
+    post '/api/accounts?email=anew@doughboy.com&password=linebacker'
+    resp = jsonify(response.body)
+    assert_includes resp[:message], "Account Created"
+    assert_equal resp[:success], true
+  end
+
 end

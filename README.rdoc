@@ -17,10 +17,13 @@ Things you may want to cover:
   All api actions are performed through the nested route /api.  There are 3 controllers.
   Signup is handled by the Api::AccountsController
     /api/accounts
-      - Accepts :email and :username
+      - Accepts :email (which we are treating like a username) and :password
         if email is found returns
           success: false
           message: "Duplicate Username!"
+        if email not found but password is blank (not present or empty)
+          success: false
+          message: "Please enter a password"
         otherwise creates an account using username and password and returns
           success: true
           message: "Account Create, Logging In!"
