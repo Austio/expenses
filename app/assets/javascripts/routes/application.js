@@ -15,9 +15,9 @@ App.ApplicationRoute = Ember.Route.extend({
                 }
             })
 
-            this.transitionTo('login');
             alert("Logged Out Successfully!")
-            //location.reload();
+            location.reload(); //clear all the data from browser
+            this.transitionTo('login');
         }
     }
     //TODO deal with someone having a token that doesn't go anywhere
