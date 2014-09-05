@@ -11,7 +11,6 @@ App.ReportController = Ember.Controller.extend({
 
         }).then(function(response){
 
-
             console.log(response)
 
             outArray = []
@@ -21,10 +20,8 @@ App.ReportController = Ember.Controller.extend({
                   amount: response[k]["amount"],
                   average: response[k]["average"],
                   total_expenses: response[k]["total_expenses"]
-
               })
             }
-
 
             self.set('expensesByWeek',  outArray);
         })
