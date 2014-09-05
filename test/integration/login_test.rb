@@ -4,17 +4,17 @@ class LoginTest < ActionDispatch::IntegrationTest
   test "Validates user is in system"  do
     post '/api/sessions?email=unknown@thundercats.com'
     resp = jsonify(response.body)
-    assert_equal resp[:message], "Username Not Found"
-    assert_equal resp[:success], false
-    assert_equal resp[:token], nil
+    assert_equal "Username Not Found",resp[:message]
+    assert_equal false, resp[:success]
+    assert_equal nil, resp[:token]
   end
 
   test "Validates password correctness"  do
     post '/api/sessions?email=a@doughboy.com&password=RandomishGuess'
     resp = jsonify(response.body)
-    assert_equal resp[:message], "Please Check Password"
-    assert_equal resp[:success], false
-    assert_equal resp[:token], nil
+    assert_equal "Please Check Password", resp[:message]
+    assert_equal false, resp[:success]
+    assert_equal nil, resp[:token]
   end
 
   test "Signs in valid accounts returning token"  do
@@ -22,9 +22,9 @@ class LoginTest < ActionDispatch::IntegrationTest
     post '/api/sessions?email=a@doughboy.com&password=linebacker'
 
     resp = jsonify(response.body)
-    assert_includes resp[:message], "Successfully Logged In"
-    assert_equal resp[:success], true
-    assert_equal resp[:token], "OfSwordAndIce"
+    assert_equal "Successfully Logged In!", resp[:message]
+    assert_equal true, resp[:success]
+    assert_equal "OfSwordAndIce", resp[:token]
   end
 
 end

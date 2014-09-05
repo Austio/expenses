@@ -18,6 +18,5 @@ class Api::SessionsController < ActionController::Base
     if token.destroy
       render json: {success: true}
     end
-
   end
 end
