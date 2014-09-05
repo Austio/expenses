@@ -15,6 +15,7 @@ Things you may want to cover:
 
 * API
   All api actions are performed through the nested route /api.  There are 3 controllers.
+
   Signup is handled by the Api::AccountsController
     /api/accounts
       - Accepts :email (which we are treating like a username) and :password
@@ -29,7 +30,22 @@ Things you may want to cover:
           message: "Account Create, Logging In!"
           token: --A randomly generated api token for login--
 
-  Sessions
+  Login is handled by the Api::SessionsController
+  #  To be more security conscious, we should respond with a generic "Username or Password not found on each failed request"
+  #    I wrote it this way just to give feed back on checking for both fields
+    /api/sessions
+      - Accepts :email (which we are treating like a username) and :password
+        if email is not found returns
+          success: false
+          message: "Username Not Found"
+        if email found but password is incorrect
+          success: false
+          message: "Please Check Password"
+        if email and password match then
+          success: true
+          message: "Successfully Logged In!"
+          token: --A randomly generated super long secure api token--
+
 
   Expenses
 

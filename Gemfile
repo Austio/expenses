@@ -41,3 +41,5 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'ember-rails'
 gem 'ember-source'
 gem 'emblem-rails'
+
+gem 'mocha'
