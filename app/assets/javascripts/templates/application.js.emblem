@@ -4,6 +4,7 @@ header
       h1
         | Adequate Expenses
         a href="#/expenses"  ||  Expenses  |
+        a href="#/report"   |  Reports |
         a click="logoutUser" |  Logout  |
         a href="#/login"  |  Login  |
         a href="#/" |  Sign Up

@@ -26,12 +26,12 @@
       {{/if}}
 </script>
 
-<script type="text/x-handlebars" data-template-name="reports">
-        <h2>Sign Up</h2>
-        {{input value=email type="text" placeholder="Email"}}
-        {{input value=password type="password" placeholder="Password"}}
-        {{input class="btn" type="submit" value="Sign Up!"}}
+<script type="text/x-handlebars" data-template-name="report" id="report">
+
+      <h2>Howdy!</h2>
+      {{expenses_by_week.inspect}}
       {{#if errorMessage}}
         <div class="alert alert-error">{{errorMessage}}</div>
       {{/if}}
+
 </script>

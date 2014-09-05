@@ -6,5 +6,5 @@ App.Router.map ->
     @resource 'expense', path: '/expenses/:id', ->
       @route 'edit'
   @route 'signup', path: '/'
-  @route 'login'
-  @route 'reports'
+  @route 'login', path: '/login'
+  @route 'report', path: '/report'
