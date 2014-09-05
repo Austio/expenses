@@ -5,6 +5,7 @@
 # below each fixture, per the syntax in the comments below
 #
 pillsbury:
+  id: 1
   email: a@doughboy.com
   password_digest: <%= BCrypt::Password.create('linebacker') %>
 # column: value

@@ -2,13 +2,14 @@
 
 one:
   id: 1
-  user: pillsbury
+  user_id: 1
   date: 2014-08-24 12:18:58
   amount: 100000
   description: Night on the town
 
 two:
-  user: pillsbury
+  id: 2
+  user_id: 1
   date: 2014-08-24 12:18:58
   amount: 10000
   description: Dough!!!

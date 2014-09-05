@@ -4,7 +4,7 @@ class Api::ExpensesController < ApplicationController
   def index
     user = current_user
     if user
-      respond_with user.expenses.all
+      render json: user.expenses.all
     else
       render json: { message: "Unauthorized"}, status: 403
     end
@@ -12,7 +12,7 @@ class Api::ExpensesController < ApplicationController
 
   def show
     if authorized?
-      respond_with expense
+      render json: expense
     else
       render json: { message: "Unauthorized"}, status: 403
     end
@@ -21,7 +21,7 @@ class Api::ExpensesController < ApplicationController
   def create
     user = current_user
     if user
-      respond_with :api, current_user.expenses.create(expense_params)
+      render json: current_user.expenses.create(expense_params)
     else
       render json: { message: "Unauthorized"}, status: 403
     end
@@ -29,7 +29,7 @@ class Api::ExpensesController < ApplicationController
 
   def update
     if authorized?
-      respond_with expense.update(expense_params)
+      render json: expense.update(expense_params)
     else
       render json: { message: "Unauthorized"}, status: 403
     end
