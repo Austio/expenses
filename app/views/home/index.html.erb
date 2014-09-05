@@ -28,8 +28,31 @@
 
 <script type="text/x-handlebars" data-template-name="report" id="report">
 
-      <h2>Howdy!</h2>
-      {{expenses_by_week.inspect}}
+
+      {{#each expensesByWeek}}
+
+      <table>
+        <thead>
+          <tr>
+            <th>Week</th>
+            <th>Total Spent</th>
+            <th>Average per Transaction</th>
+            <th>Number of Expenses</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+
+            <td>{{this.key}}</td>
+            <td>{{this.amount}}</td>
+            <td>{{this.average}}</td>
+            <td>{{this.total_expenses}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      {{/each}}
       {{#if errorMessage}}
         <div class="alert alert-error">{{errorMessage}}</div>
       {{/if}}

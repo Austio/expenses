@@ -1,8 +1,26 @@
 App.ReportController = Ember.Controller.extend({
 
     setup: function() {
-        var expenses_by_week = $.get('/api/reports')
-        alert(expenses_by_week)
+        var self = this;
+        $.get('/api/reports').then(function(response){
+
+
+            console.log(response)
+
+            outArray = []
+            for (var k in response) {
+              outArray.push({
+                  key: k,
+                  amount: response[k]["amount"],
+                  average: response[k]["average"],
+                  total_expenses: response[k]["total_expenses"]
+
+              })
+            }
+
+
+            self.set('expensesByWeek',  outArray);
+        })
 
 //        var self = this, data = this.getProperties('email', 'password');
 //
